@@ -175,9 +175,7 @@ Mh@@@@@@@oMMMMMMMMMm`@@@@@`NMMMMh@@@@@@@oMMMMMMMMMm`@@@@@`NMMMMMMMMMM@@@@@o+@@@@
 M-@@@@@@@-dMMMMMMmo`@@@@@`dMMMMM-@@@@@@@-dMMMMMMmo`@@@@@`dMMMMMMMMMMs@@@@@@@@@@@.dMMMMMMMMMMMMMMMMMM\n
 y@@@@@@@@@@@@@@@@@@@@@@.+NMMMMMy@@@@@@@@@@@@@@@@@@@@@@.+NMMMMMMMMMMMN@@@@@@@@@@MNMMMMMMMMMMMMMMMMMMM\n
 +/@@@@@@@@@@@@@@@@@@@sdMMMMMMMM+/@@@@@@@@@@@@@@@@@@@sdMMMMMMMMMMMMMMMo@@@@@@@@oMMMMMMMMMMMMMMMMMMMMM\n
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\n      
-                                                     
-";
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\n";
         foreach (char c in Penguin)
         {
             if (c == '\n')
