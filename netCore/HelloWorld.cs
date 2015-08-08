@@ -16,6 +16,10 @@ public class Program
         {
             DrawMac();
         }
+        else if (args.Length == 1 && args[0] == "bbv")
+        {
+            DrawBbv();
+        }
         else
         {
             DrawWindows();
@@ -143,6 +147,61 @@ public class Program
         Console.ResetColor();
         Console.WriteLine();
     }
+
+    private static void DrawBbv()
+    {
+        Console.WriteLine("Hello, Linux...");
+
+        const string Penguin = @"
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmddhysso+++:::::::::::++oossyhdmNMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmhy::::::::::::::::::::::::::::::::::::::/+syhmNMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdy::::osyhddmNNMMMMMMMMMMMMMMMNmmddhyso+/::::::::::::/oyhmMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMmhs:::dmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmdhso/::::::::::/oydNMMM
+MMMMMMMMMh@@@@@@@MMMMMMMMmhh::MMMMMMMMMMM@@@@@@@hMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdys+::::::::::+sd
+MMMMMMMMs@@@@@@@sMMMMMNmdmMMMMMMMMMMMMMs@@@@@@@sMMMMMNmdmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdyo/::::::/m
+MMMMMMMN`@@@@@@.MMMMMMMMMMMMMMMMMMMMMMN`@@@@@@.MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmyo::oNM
+MMMMMMMo@@@@@@@yMMMMMMMMMMMMMMMMMMMMMMo@@@@@@@yMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmMMM
+MMMMMMN`@@@@@@-MMMMMMMMMMMMMMMMMMMMMMN`@@@@@@-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMo@@@@@@@hM@@@@@@@@+shNMMMMMMMMMo@@@@@@@hM@@@@@@@@+shNMMMMMMh@@@@@@hMMMMMMMMMMMMmm@@@@@@hMMMMMM
+MMMMMm`@@@@@@@@@@@@@@@@@@@@`/mMMMMMMm`@@@@@@@@@@@@@@@@@@@@`/mMMMMs@@@@@@:MMMMMMMMMMMd`@@@@@@/NMMMMMM
+MMMMM+@@@@@@@.ohmNMNms.@@@@@@`NMMMMM+@@@@@@@.ohmNMNms.@@@@@@`NMMMN@@@@@@`MMMMMMMMMMy@@@@@@@sMMMMMMMM
+MMMMm@@@@@@@:MMMMMMMMMN@@@@@@@NMMMMm@@@@@@@:MMMMMMMMMN@@@@@@@NMMMM:@@@@@@mMMMMMMMMo@@@@@@.dMMMMMMMMM
+MMMM/@@@@@@@mMMMMMMMMMy@@@@@@/MMMMM/@@@@@@@mMMMMMMMMMy@@@@@@/MMMMMs@@@@@@yMMMMMMN/@@@@@@:NMMMMMMMMMM
+MMMd@@@@@@@+MMMMMMMMMM.@@@@@@mMMMMd@@@@@@@+MMMMMMMMMM.@@@@@@mMMMMMN@@@@@@+MMMMMN-@@@@@@oMMMMMMMMMMMM
+MMM:@@@@@@`NMMMMMMMMMs@@@@@@/MMMMM:@@@@@@`NMMMMMMMMMs@@@@@@/MMMMMMM:@@@@@-MMMMd.@@@@@`hMMMMMMMMMMMMM
+MMh@@@@@@@oMMMMMMMMMN.@@@@@@mMMMMh@@@@@@@oMMMMMMMMMN.@@@@@@mMMMMMMMs@@@@@@NMMh`@@@@@-mMMMMMMMMMMMMMM
+MM-@@@@@@`NMMMMMMMMMo@@@@@@/MMMMM-@@@@@@`NMMMMMMMMMo@@@@@@/MMMMMMMMN@@@@@@hMs@@@@@@/NMMMMMMMMMMMMMMM
+Mh@@@@@@@oMMMMMMMMMm`@@@@@`NMMMMh@@@@@@@oMMMMMMMMMm`@@@@@`NMMMMMMMMM:@@@@@o+@@@@@@sMMMMMMMMMMMMMMMMM
+M-@@@@@@@-dMMMMMMmo`@@@@@`dMMMMM-@@@@@@@-dMMMMMMmo`@@@@@`dMMMMMMMMMMs@@@@@@@@@@@.dMMMMMMMMMMMMMMMMMM
+y@@@@@@@@@@@@@@@@@@@@@@.+NMMMMMy@@@@@@@@@@@@@@@@@@@@@@.+NMMMMMMMMMMMN@@@@@@@@@@:NMMMMMMMMMMMMMMMMMMM
++/@@@@@@@@@@@@@@@@@@@sdMMMMMMMM+/@@@@@@@@@@@@@@@@@@@sdMMMMMMMMMMMMMMMo@@@@@@@@oMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM      
+                                                     
+";
+        foreach (char c in Penguin)
+        {
+            if (c == '\n')
+            {
+                Console.ResetColor();
+                Console.WriteLine();
+            }
+            else
+            {
+                ConsoleColor cc =
+                    c == '@' ? ConsoleColor.Black :
+                    c == ':' ? ConsoleColor.Red :
+                    c == '-' ? ConsoleColor.Yellow :
+                    ConsoleColor.White;
+                Console.BackgroundColor = cc;
+                Console.ForegroundColor = cc;
+                Console.Write(" ");
+            }
+        }
+
+        Console.ResetColor();
+        Console.WriteLine();
+    }
+
     private static void DrawFreeBSD()
     {
         Console.WriteLine("Hello, FreeBSD...");
@@ -176,7 +235,7 @@ public class Program
          * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
          * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
          */
-        
+
         const string daemon_pic = @"
                ,        ,
               /(        )`
@@ -221,10 +280,10 @@ public class Program
          CCCCCCCCCCCCCCC
 ";
 
-        for (int i=0; i < daemon_pic.Length; i++)
+        for (int i = 0; i < daemon_pic.Length; i++)
         {
             var symbol = daemon_pic[i];
-            var attr =   daemon_attr[i];
+            var attr = daemon_attr[i];
 
             ConsoleColor color =
                 attr == 'R' ? ConsoleColor.Red :
@@ -233,7 +292,7 @@ public class Program
                 attr == 'Y' ? ConsoleColor.Yellow :
                 attr == 'C' ? ConsoleColor.Cyan :
                 ConsoleColor.White;
-            
+
             Console.ForegroundColor = color;
             Console.Write(symbol);
         }
